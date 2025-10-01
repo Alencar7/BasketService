@@ -32,46 +32,47 @@ Projeto em Java com Spring Boot para desenvolvimento de uma API de gerenciamento
 
 Exemplo de configuração:
 
-spring:  
-  application:    
-    name: basket-service    
+	spring:  
+  		application:    
+    		name: basket-service    
 
-  data:      
-    mongodb:        
-      host: localhost        
-      port: 27012        
-      database: basket-service      
+  		data:      
+    		mongodb:        
+		      host: localhost        
+		      port: 27012        
+		      database: basket-service      
 
-    redis:        
-      host: localhost        
-      port: 6379        
-      password:     
+	    redis:       
+	      host: localhost        
+	      port: 6379        
+	      password:     
 
-  cache:        
-    redis:          
-      time-to-list: 6000
+	  	cache:        
+	    	redis:          
+	      	time-to-list: 6000
 
-🐳 Docker Compose
-version: '3.8'
-services:  
-  mongo:    
-    container_name: mongodb    
-    image: mongo:4    
-    ports:      
-      - "27017:27017"    
-    volumes:      
-      - mongo-data:/data/db 
-
-  redis:    
-    container_name: redis    
-    image: redis    
-    environment:      
-      - ALLOW_EMPTY_PASSWORD=yes    
-    ports:        
-      - '6379:6379'
-		
-volumes:  
-  mongo-data:
+ Docker Compose
+ 
+	version: '3.8'
+	services:  
+	  mongo:    
+	    container_name: mongodb    
+	    image: mongo:4    
+	    ports:      
+	      - "27017:27017"    
+	    volumes:      
+	      - mongo-data:/data/db 
+	
+	  redis:    
+	    container_name: redis    
+	    image: redis    
+	    environment:      
+	      - ALLOW_EMPTY_PASSWORD=yes    
+	    ports:        
+	      - '6379:6379'
+			
+	volumes:  
+	  mongo-data:
 
 ### Funcionalidades do Basket Service
 - Produtos
